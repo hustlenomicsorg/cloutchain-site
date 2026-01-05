@@ -1,74 +1,29 @@
 export default function Home() {
   return (
     <main>
-      {/* HERO SECTION */}
-      <section className="section">
-        <div className="container center">
-          <div
-            className="glass"
-            style={{
-              padding: "80px 60px",
-              animation: "fadeUp 1s ease forwards",
-            }}
-          >
-            <h1
-              style={{
-                fontSize: "64px",
-                fontWeight: 800,
-                letterSpacing: "-1px",
-              }}
-            >
-              CLOUTCHAIN
+      {/* HERO */}
+      <section className="section hero">
+        <div className="container">
+          <div className="heroCard">
+            <span className="pill">CREATOR × CAMPUS × BRAND</span>
+
+            <h1 className="heroTitle">
+              We Build <span>Influence</span>
+              <br />
+              That Converts
             </h1>
 
-            <p
-              style={{
-                marginTop: "24px",
-                fontSize: "20px",
-                color: "var(--text-muted)",
-                maxWidth: "720px",
-                marginInline: "auto",
-                lineHeight: "1.7",
-              }}
-            >
-              A premium creator & campus-driven growth network connecting
-              influencers, student ambassadors, and brands through trust,
-              performance, and scale.
+            <p className="heroText">
+              CloutChain is a next-gen creator & campus growth agency connecting
+              influencers, student ambassadors, and brands through structured,
+              transparent, performance-driven collaborations.
             </p>
 
-            <div
-              style={{
-                marginTop: "48px",
-                display: "flex",
-                justifyContent: "center",
-                gap: "24px",
-                flexWrap: "wrap",
-              }}
-            >
-              <a
-                href="#"
-                style={{
-                  padding: "16px 36px",
-                  background: "var(--accent)",
-                  color: "#000",
-                  borderRadius: "999px",
-                  fontWeight: 700,
-                  textDecoration: "none",
-                }}
-              >
+            <div className="heroActions">
+              <a className="primaryBtn" href="/influencers">
                 Join as Creator
               </a>
-
-              <a
-                href="#"
-                style={{
-                  padding: "16px 36px",
-                  border: "1px solid var(--border-glass)",
-                  color: "#fff",
-                  borderRadius: "999px",
-                  textDecoration: "none",
-                }}
-              >
+              <a className="secondaryBtn" href="/ambassadors">
                 Become Ambassador
               </a>
             </div>
@@ -76,29 +31,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* VALUE SECTION */}
+      {/* TRUST STRIP */}
       <section className="section">
         <div className="container">
-          <div
-            className="glass"
-            style={{
-              padding: "64px",
-              display: "grid",
-              gap: "32px",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-            }}
-          >
-            <Feature
-              title="Influencer Network"
-              text="Verified creators matched with high-intent brand campaigns."
+          <div className="trustGrid">
+            <TrustItem title="Verified Creators" />
+            <TrustItem title="Campus Networks" />
+            <TrustItem title="Brand-Safe Deals" />
+            <TrustItem title="Transparent Payouts" />
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section className="section">
+        <div className="container">
+          <div className="glass services">
+            <Service
+              title="Influencer Marketing"
+              text="We match creators with brands that align with audience trust, not just reach."
             />
-            <Feature
-              title="Campus Ambassadors"
-              text="College-wise ambassadors driving grassroots reach and trust."
+            <Service
+              title="Campus Ambassador Programs"
+              text="College-wise ambassadors driving grassroots adoption and authentic growth."
             />
-            <Feature
+            <Service
               title="Brand Partnerships"
-              text="Transparent, performance-driven collaborations for brands."
+              text="Performance-based collaborations designed for scale and long-term value."
             />
           </div>
         </div>
@@ -107,19 +66,23 @@ export default function Home() {
   );
 }
 
-function Feature({ title, text }: { title: string; text: string }) {
+/* ---------- Components ---------- */
+
+function TrustItem({ title }: { title: string }) {
+  return <div className="trustItem">{title}</div>;
+}
+
+function Service({
+  title,
+  text,
+}: {
+  title: string;
+  text: string;
+}) {
   return (
-    <div>
-      <h3 style={{ fontSize: "22px", fontWeight: 700 }}>{title}</h3>
-      <p
-        style={{
-          marginTop: "12px",
-          color: "var(--text-muted)",
-          lineHeight: "1.6",
-        }}
-      >
-        {text}
-      </p>
+    <div className="serviceCard">
+      <h3>{title}</h3>
+      <p>{text}</p>
     </div>
   );
 }
