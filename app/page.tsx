@@ -4,19 +4,20 @@ export default function Home() {
       {/* HERO */}
       <section className="section hero">
         <div className="container">
-          <div className="heroCard">
-            <span className="pill">CREATOR × CAMPUS × BRAND</span>
+          <div className="heroCard glass reveal">
+            <span className="pill">INFLUENCE · CAMPUS · CULTURE</span>
 
             <h1 className="heroTitle">
-              We Build <span>Influence</span>
+              We Power the <span>Next Generation</span>
               <br />
-              That Converts
+              of Influence
             </h1>
 
             <p className="heroText">
-              CloutChain is a next-gen creator & campus growth agency connecting
-              influencers, student ambassadors, and brands through structured,
-              transparent, performance-driven collaborations.
+              CloutChain is a modern influencer and campus-driven growth agency.
+              We connect creators, student ambassadors, and brands through
+              structured systems, transparent payouts, and performance-led
+              collaborations.
             </p>
 
             <div className="heroActions">
@@ -31,33 +32,57 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TRUST STRIP */}
+      {/* BRAND / SOCIAL PROOF */}
       <section className="section">
         <div className="container">
-          <div className="trustGrid">
-            <TrustItem title="Verified Creators" />
-            <TrustItem title="Campus Networks" />
-            <TrustItem title="Brand-Safe Deals" />
-            <TrustItem title="Transparent Payouts" />
+          <div className="brandStrip reveal">
+            <Brand>Creators</Brand>
+            <Brand>Startups</Brand>
+            <Brand>EdTech</Brand>
+            <Brand>Web3</Brand>
+            <Brand>D2C Brands</Brand>
           </div>
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* WHAT WE DO */}
       <section className="section">
         <div className="container">
-          <div className="glass services">
-            <Service
-              title="Influencer Marketing"
-              text="We match creators with brands that align with audience trust, not just reach."
+          <div className="infoGrid">
+            <InfoCard
+              title="Influencer Network"
+              text="Verified creators matched with brands that respect audience trust and creator value."
             />
-            <Service
-              title="Campus Ambassador Programs"
-              text="College-wise ambassadors driving grassroots adoption and authentic growth."
+            <InfoCard
+              title="Campus Ambassadors"
+              text="College-wise ambassadors driving grassroots adoption and hyperlocal influence."
             />
-            <Service
-              title="Brand Partnerships"
-              text="Performance-based collaborations designed for scale and long-term value."
+            <InfoCard
+              title="Brand Campaigns"
+              text="Performance-based campaigns designed for scale, not vanity metrics."
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* HOW IT WORKS */}
+      <section className="section">
+        <div className="container">
+          <div className="glass howItWorks reveal">
+            <Step
+              number="01"
+              title="Onboard & Verify"
+              text="Creators and ambassadors join through a structured onboarding and verification process."
+            />
+            <Step
+              number="02"
+              title="Match & Activate"
+              text="We match creators and campuses with relevant brand campaigns."
+            />
+            <Step
+              number="03"
+              title="Execute & Scale"
+              text="Campaigns are executed with tracking, reporting, and transparent payouts."
             />
           </div>
         </div>
@@ -66,13 +91,13 @@ export default function Home() {
   );
 }
 
-/* ---------- Components ---------- */
+/* -------- COMPONENTS -------- */
 
-function TrustItem({ title }: { title: string }) {
-  return <div className="trustItem">{title}</div>;
+function Brand({ children }: { children: string }) {
+  return <div className="brandItem">{children}</div>;
 }
 
-function Service({
+function InfoCard({
   title,
   text,
 }: {
@@ -80,9 +105,29 @@ function Service({
   text: string;
 }) {
   return (
-    <div className="serviceCard">
+    <div className="infoCard reveal">
       <h3>{title}</h3>
       <p>{text}</p>
+    </div>
+  );
+}
+
+function Step({
+  number,
+  title,
+  text,
+}: {
+  number: string;
+  title: string;
+  text: string;
+}) {
+  return (
+    <div className="step">
+      <span className="stepNumber">{number}</span>
+      <div>
+        <h3>{title}</h3>
+        <p>{text}</p>
+      </div>
     </div>
   );
 }
