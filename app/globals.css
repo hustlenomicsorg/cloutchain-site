@@ -1,11 +1,21 @@
+/* =========================
+   CLOUTCHAIN – GLOBAL STYLES
+   ========================= */
+
+/* ---------- CSS VARIABLES ---------- */
+
 :root {
   --bg-main: #0b0b0b;
   --bg-glass: rgba(255, 255, 255, 0.08);
   --border-glass: rgba(255, 255, 255, 0.18);
+
   --text-main: #ffffff;
   --text-muted: #b5b5b5;
-  --accent: #f5c518;
+
+  --accent: #f5c518; /* premium gold */
 }
+
+/* ---------- RESET ---------- */
 
 * {
   box-sizing: border-box;
@@ -15,31 +25,35 @@
 
 html,
 body {
-  background: var(--bg-main);
-  color: var(--text-main);
   width: 100%;
   height: 100%;
-  font-family: var(--font-body), system-ui, sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-body), system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
+
+/* ---------- TYPOGRAPHY ---------- */
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: var(--font-heading), system-ui, sans-serif;
+  letter-spacing: -0.5px;
 }
+
+p {
+  line-height: 1.6;
+}
+
+/* ---------- LAYOUT UTILITIES ---------- */
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
-}
-
-.glass {
-  background: var(--bg-glass);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid var(--border-glass);
-  border-radius: 20px;
 }
 
 .section {
@@ -49,7 +63,39 @@ h3 {
 .center {
   text-align: center;
 }
-/* ===== HOME PAGE ===== */
+
+/* ---------- GLASSMORPHISM ---------- */
+
+.glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--border-glass);
+  border-radius: 20px;
+}
+
+/* ---------- BUTTONS ---------- */
+
+.primaryBtn {
+  padding: 16px 36px;
+  background: var(--accent);
+  color: #000;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.secondaryBtn {
+  padding: 16px 36px;
+  border: 1px solid var(--border-glass);
+  color: var(--text-main);
+  border-radius: 999px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* ---------- HOME / HERO ---------- */
 
 .hero {
   padding-top: 160px;
@@ -66,9 +112,9 @@ h3 {
   display: inline-block;
   padding: 8px 16px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  font-size: 13px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  font-size: 12px;
   letter-spacing: 1px;
   margin-bottom: 32px;
 }
@@ -100,24 +146,7 @@ h3 {
   flex-wrap: wrap;
 }
 
-.primaryBtn {
-  padding: 16px 36px;
-  background: var(--accent);
-  color: #000;
-  border-radius: 999px;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.secondaryBtn {
-  padding: 16px 36px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: white;
-  border-radius: 999px;
-  text-decoration: none;
-}
-
-/* TRUST STRIP */
+/* ---------- TRUST STRIP ---------- */
 
 .trustGrid {
   display: grid;
@@ -134,7 +163,7 @@ h3 {
   font-weight: 600;
 }
 
-/* SERVICES */
+/* ---------- SERVICES ---------- */
 
 .services {
   padding: 64px;
@@ -154,7 +183,7 @@ h3 {
   line-height: 1.6;
 }
 
-/* ANIMATIONS */
+/* ---------- ANIMATIONS ---------- */
 
 @keyframes heroFade {
   from {
@@ -167,3 +196,22 @@ h3 {
   }
 }
 
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .hero {
+    padding-top: 120px;
+  }
+
+  .heroText {
+    font-size: 16px;
+  }
+
+  .services {
+    padding: 40px;
+  }
+}
