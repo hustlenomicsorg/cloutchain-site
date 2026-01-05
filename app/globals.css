@@ -278,3 +278,100 @@ p {
     padding: 44px;
   }
 }
+
+/* ===============================
+   ADVANCED HOME INTERACTIONS
+   =============================== */
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: revealUp 1s ease forwards;
+}
+
+@keyframes revealUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Brand strip */
+.brandStrip {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+  opacity: 0.85;
+}
+
+.brandItem {
+  padding: 18px 28px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+  font-weight: 600;
+  box-shadow: 0 0 40px rgba(124, 124, 255, 0.18);
+}
+
+/* Info cards */
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+}
+
+.infoCard {
+  padding: 48px;
+  border-radius: 24px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.04)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.infoCard h3 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.infoCard p {
+  margin-top: 16px;
+  color: var(--text-muted);
+}
+
+/* How it works */
+.howItWorks {
+  padding: 72px;
+  display: grid;
+  gap: 40px;
+}
+
+.step {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.stepNumber {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--accent-2);
+}
+
+/* Parallax lighting */
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    600px 200px at 50% 0%,
+    rgba(124, 124, 255, 0.12),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
